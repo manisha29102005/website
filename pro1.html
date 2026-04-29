@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Search Console Guide</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;line-height:1.6}
+header{padding:40px 20px;text-align:center}
+header h1{font-size:2.2rem;margin-bottom:10px}
+header p{color:#cbd5e1}
+.container{max-width:1000px;margin:auto;padding:20px}
+.card{background:#ffffff12;border:1px solid #ffffff22;border-radius:18px;padding:20px;margin:15px 0;backdrop-filter:blur(8px)}
+.card h2{margin-bottom:10px;color:#38bdf8}
+ol li{margin:10px 0}
+button{padding:12px 18px;border:none;border-radius:10px;background:#38bdf8;color:#00111a;font-weight:bold;cursor:pointer}
+button:hover{transform:scale(1.03)}
+#result{margin-top:15px;padding:12px;border-radius:10px;background:#0ea5e922;display:none}
+footer{text-align:center;padding:20px;color:#94a3b8}
+</style>
+</head>
+<body>
+<header>
+<h1>Google Search Console Practical Guide</h1>
+<p>Demo Web Page for GitHub Sitemap Submit and Indexed Check</p>
+</header>
+<div class="container">
+<div class="card">
+<h2>Steps</h2>
+<ol>
+<li>Open Google Search Console.</li>
+<li>Add your GitHub Pages website.</li>
+<li>Verify ownership.</li>
+<li>Open the Sitemaps section.</li>
+<li><b>sitemap.xml</b> Submit it.</li>
+<li>Check status in Indexing > Pages.</li>
+<li>Use URL Inspection to check whether a page is indexed.</li>
+</ol>
+</div>
+<div class="card">
+<h2>Example Sitemap URL</h2>
+<p>https://yourname.github.io/sitemap.xml</p>
+<button onclick="checkIndex()">Indexed Status Demo</button>
+<div id="result"></div>
+</div>
+<div class="card">
+<h2>Indexed Meaning</h2>
+<p>Indexed means Google has added your webpage to its search database.</p>
+</div>
+</div>
+<footer>Made with HTML + CSS + JavaScript</footer>
+<script>
+function checkIndex(){
+ const box=document.getElementById('result');
+ box.style.display='block';
+ const msgs=['✅ URL is Indexed on Google','⏳ Sitemap submitted, waiting for crawl','❌ URL not Indexed yet'];
+ box.innerHTML=msgs[Math.floor(Math.random()*msgs.length)];
+}
+</script>
+</body>
+</html>
